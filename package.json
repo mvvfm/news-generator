@@ -1,0 +1,16 @@
+{
+  "name": "news-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "mustache": "^2.3.0",
+    "nightmare": "^2.10.0"
+  }
+}

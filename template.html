@@ -1,0 +1,144 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: #fff;
+            font-family: "Segoe UI", "Open Sans", sans-serif, serif;
+            font-size: 0.9rem;
+            line-height: 1.1;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        container {
+            width: 960px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        section {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        
+        grid {
+            display: flex;
+            flex-flow: column wrap;
+            padding-bottom: .5rem;
+            color: rgba(0, 0, 0, .6);
+        }
+        
+        div {
+            margin: 8 0px;
+        }
+        
+        article {
+            padding: 20 0;
+            margin: 0px;
+        }
+
+        article p {
+            margin-bottom: 10px;
+        }
+        
+        section .header {
+            align-self: center;
+        }
+        
+        .header h2 {
+            color: #fff;
+        }
+        
+        .grid article {
+            margin-top: 0;
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+        
+        .green {
+            background-color: #008A00;
+        }
+        
+        h3 {
+            padding: 10 8;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        
+        h3.news1 {
+            background-color: #ce352c;
+            color: #fff;
+        }
+        
+        h3.news2 {
+            background-color: #60a917;
+            color: #fff;
+        }
+        
+        h3.news3 {
+            background-color: #d5008f;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <container>
+        <section class="green" style="justify-content: center; flex-direction: column;">
+            <article class="header">
+                <h2 style="margin-bottom:0;">Biuletyn prasowy</h2>
+            </article>
+            <article style="align-self: flex-end; color: #fff; margin: 0 8;">
+                    Opracowano na dzień {{currentDate}} r. przez Biuro prasowe
+            </article>
+        </section>
+        <div class="grid">
+            <h3 class="news1">Najnowsze</h3>
+            <section>
+                <article>
+                    <p>News dnia</p>
+                    {{#swiat}}
+                    <a href="{{url}}">{{title}}</a> {{text}} 
+                    {{/swiat}}
+                </article>
+                <article>
+                    <p>Temat dnia</p>
+                    {{#tematDnia}}
+                    <a href="{{url}}">{{title}}</a> {{text}}
+                    <br> 
+                    {{/tematDnia}}
+                </article>
+            </section>
+        </div>
+
+        <div class="grid">
+            <h3 class="news2">Kraj</h3>
+            <section>
+                {{#elseDnia}}
+                <article>
+                    <p><a href="{{url}}">{{title}}</a></p>
+                    {{text}}
+                </article>
+                {{/elseDnia}}
+            </section>
+        </div>
+
+        <div class="grid">
+            <h3 class="news2">Gospodarka</h3>
+            <section>
+                {{#gospodarka}}
+                <article>
+                    <p><a href="{{url}}">{{title}}</a></p>
+                    {{text}}
+                </article>
+                {{/gospodarka}}
+            </section>
+        </div>
+
+    </container>
+</body>
+
+</html>
